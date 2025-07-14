@@ -1,0 +1,136 @@
+/* Math-inspired background */
+body {
+    font-family: 'Orbitron', 'Courier New', monospace; /* Military-digital font */
+    padding: 20px 0;
+    margin: 0;
+    text-align: center;
+    background-color: #f0f0f0;
+    background-image: 
+        /* Faint math symbols */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ctext x='10' y='20' font-size='12' opacity='0.1'%3E∑%3C/text%3E%3Ctext x='80' y='50' font-size='14' opacity='0.1'%3E∫%3C/text%3E%3Ctext x='30' y='80' font-size='16' opacity='0.1'%3E∂%3C/text%3E%3C/svg%3E"),
+        /* Graph paper grid */
+        linear-gradient(rgba(200, 200, 255, 0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200, 200, 255, 0.3) 1px, transparent 1px);
+    background-size: 100px 100px, 20px 20px, 20px 20px;
+    color: #333; /* Dark gray for text */
+}
+
+/* Military-styled text and UI */
+span {
+    border-bottom: 2px solid #5d5d5d; /* Gunmetal gray */
+    padding: 4px;
+    font-size: 1.2em;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 2px;
+    font-weight: bold;
+    letter-spacing: 1px; /* Command-like spacing */
+}
+
+button {
+    margin: 10px 5px;
+    background: #3a5c3a; /* Army green */
+    color: white;
+    border: 2px solid #2a4a2a; /* Darker green */
+    font-weight: bold;
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 0; /* Sharp edges = tactical */
+    text-transform: uppercase; /* MILITARY COMMAND STYLE */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+    position: relative; /* Needed for absolute positioning of the pseudo-element */
+    overflow: hidden; 
+}
+
+button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+button:hover::after {
+    opacity: 1;
+}
+
+button:hover {
+    background: #2a4a2a; /* Darker green */
+    transform: translateY(-1px);
+}
+
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+#sum-el {
+    font-size: 1.3em;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #5d5d5d;
+    border-radius: 0;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.5em;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 5px 10px;
+    border-radius: 0;
+    border: 2px solid #5d5d5d;
+    transition: all 0.2s;
+}
+
+a:hover {
+    background: #3a5c3a;
+    color: white;
+}
+
+/* Add this to your existing CSS */
+#sum-el {
+    font-size: 1.5em;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #0a1f0a; /* Dark green-black like old LCD */
+    border: 4px solid #1a3a1a;
+    border-radius: 3px;
+    color: #7fff7f; /* Classic green LCD color */
+    font-family: 'Segment7Standard', monospace; /* LCD font */
+    text-shadow: 0 0 5px #7fff7f; /* Glow effect */
+    letter-spacing: 2px;
+    box-shadow: 
+        inset 0 0 10px rgba(0, 30, 0, 0.8),
+        0 0 10px rgba(0, 40, 0, 0.5);
+    min-width: 200px;
+    text-align: right;
+    position: relative;
+    overflow: hidden;
+}
+
+/* LCD pixel grid effect */
+#sum-el::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(0, 30, 0, 0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 30, 0, 0.3) 1px, transparent 1px);
+    background-size: 3px 3px;
+    pointer-events: none;
+}
+

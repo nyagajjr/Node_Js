@@ -1,13 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/blackjack.css">
-    <title>Document</title>
-</head>
-<body>
-    
-    <script src="js/bjack.js"></script>
-</body>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/blackjack.css">
+    </head>
+    <body>
+
+        <div>
+            <h1>Blackjack</h1>
+            <p id="message-el">Want to play a round?</p>
+            <p id="cards-el">Cards:</p>
+            <p id="sum-el">Sum:</p>
+            <!-- 1. Create a button that says START GAME. 
+            Make it call a startGame() function when clicked -->
+            <button id="gamer" onclick="startGame()"> START GAME </button>
+        </div>
+
+        <script src="js/bjack.js"></script>
+    </body>
 </html>

@@ -13,3 +13,9 @@ function addThem(){
 }
 
 console.log(addThem())
+
+let x = Math.floor( Math.random()*13 ) + 1
+
+let y = Math.floor( Math.random()*13 ) + 1
+
+console.log(x, y)

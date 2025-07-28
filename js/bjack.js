@@ -14,6 +14,19 @@ let cardsEl = document.querySelector("#cards-el")
 // 2. Create a startGame() function. Move the conditional
 // below (line 11-20) inside the body of the function.
 
+function randomNumber(){
+    // Random numbers between 1 and 14
+    let randomness = Math.floor(Math.random() * 13) + 1
+
+    if (randomness > 10){
+        return 10
+    } else if( randomness === 1){
+        return 11
+    } else{
+        return randomness
+    }
+}
+
 function startGame(){
     renderGame()
 }
@@ -43,7 +56,7 @@ function renderGame(){
 
 
 function newCard(){
-    let card = 10
+    let card = randomNumber()
     sum += card
     cards.push(card)
     renderGame()

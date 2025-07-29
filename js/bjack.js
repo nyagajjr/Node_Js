@@ -32,9 +32,6 @@ function startGame(){
         let randomFloor = randomNumber()
         sum += randomFloor
         cards.push(randomFloor)
-
-        
-
     }
 
     renderGame()
@@ -46,8 +43,6 @@ function renderGame(){
     for(i=0; i < cards.length; i++){
         cardsEl.textContent += cards[i] + " "
     }
-    
-
     
     sumEl.textContent = "Sum: " + sum
     if (sum <= 20) {
@@ -65,8 +60,11 @@ function renderGame(){
 
 
 function newCard(){
-    let card = randomNumber()
-    sum += card
-    cards.push(card)
-    renderGame()
+    if( isAlive === true && hasBlackJack === false){
+        let card = randomNumber()
+        sum += card
+        cards.push(card)
+        renderGame()
+    }
+    
 }
